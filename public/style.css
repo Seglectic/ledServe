@@ -10,11 +10,17 @@ body{
 #colorDisplay{
 	color: black;
 	border-radius: 10px;
-	box-shadow: 3px 3px 10px black;
-	float: left;
-	position: absolute;
-	min-width: 200px;
 	min-height: 50px;
-	margin-left: calc(50% - 115px);
 	background-color: white;
+}
+
+button{
+	position: absolute;
+	float: left;
+	
+	border-radius: 10px;
+	margin-top: 10%;
+	margin-left: calc(50% - 128px);
+
+	box-shadow: 10px 15px 50px black;
 }

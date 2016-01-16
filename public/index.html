@@ -6,14 +6,14 @@
 </head>
 
 <body>
-	ledServe [DEVTESTING]
+	ledServe [EXPERIMENTAL]
 
 	<br>
 
 	<button
 		id = "clrBtn"
-    	class="jscolor {valueElement:null,value:'66ccff'}"
-		style="width:500px; height:200px;"
+    	class="jscolor {width:256, height:200, position:'bottom', valueElement:null,value:'66ccff'}"
+		style="width:256px; height:200px;"
 	></button>
 
 	<script>
@@ -23,7 +23,7 @@
 			to update RGB LED
 		*/
 
-		this.sock = io.connect('http://Spaghett.net:9001');
+		this.sock = io.connect('http://Spaghett.net:9001'); //Connect to the ledServe socket
 
 		var send = function(){
 			var clr = document.getElementById('clrBtn').style.backgroundColor;  //Gets color of button
