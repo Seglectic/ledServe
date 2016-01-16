@@ -45,7 +45,7 @@ set = function(rgb){ //Set values
 	piblaster.setPwm(22,b);
 };
 
-set(0,0,0);
+set([0,0,0]);
 
 /*
 	RGB COMMS
