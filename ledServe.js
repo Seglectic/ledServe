@@ -37,9 +37,9 @@ var io = require('socket.io')(http);
 var piblaster = require('pi-blaster.js');
 
 set = function(rgb){ //Set values
-	var r = 1-(r[0]/255);
-	var g = 1-(g[1]/255);
-	var b = 1-(b[2]/255);
+	var r = 1-(rgb[0]/255);
+	var g = 1-(rgb[1]/255);
+	var b = 1-(rgb[2]/255);
 	piblaster.setPwm(17,r);
 	piblaster.setPwm(18,g);
 	piblaster.setPwm(22,b);
