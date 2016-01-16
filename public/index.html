@@ -8,7 +8,6 @@
 <body>
 	ledServe [DEVTESTING]
 
-	
 	<br>
 
 	<button
@@ -17,21 +16,22 @@
 		style="width:500px; height:200px;"
 	></button>
 
-	
-	
-
 	<script>
-		this.sock = io.connect('http://192.168.1.234:9001');
+		/*
+				Main client JS script
+			Sends a stream of RGB values to the server
+			to update RGB LED
+		*/
+
+		this.sock = io.connect('http://Spaghett.net:9001');
 
 		var send = function(){
-			//Gets color of button
-			var clr = document.getElementById('clrBtn').style.backgroundColor;
+			var clr = document.getElementById('clrBtn').style.backgroundColor;  //Gets color of button
 			clr = clr.replace('rgb(','');
 			clr = clr.replace(')','');
 			clr = clr.replace(/,/gi,'');
 			console.log(clr);
-			//Send color through socket
-			this.sock.emit('ledCLR',clr)
+			this.sock.emit('ledCLR',clr) //Send color through socket
 		}
 
 		setInterval(send,100);

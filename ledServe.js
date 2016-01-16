@@ -45,7 +45,7 @@ set = function(rgb){ //Set values
 	piblaster.setPwm(22,b);
 };
 
-set([0,0,0]);
+
 
 /*
 	RGB COMMS
@@ -59,7 +59,8 @@ io.on('connection',function(sock){
 
 	sock.on('ledCLR',function(clr){
 		clr = clr.split(' ')
-		console.log(clr)
+		set(clr);
+		//console.log(clr)
 	});
 
 });
