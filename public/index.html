@@ -1,0 +1,42 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="jscolor.min.js"></script>
+	<script type="text/javascript" src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+	ledServe [DEVTESTING]
+
+	
+	<br>
+
+	<button
+		id = "clrBtn"
+    	class="jscolor {valueElement:null,value:'66ccff'}"
+		style="width:500px; height:200px;"
+	></button>
+
+	
+	
+
+	<script>
+		this.sock = io.connect('http://localhost:9001');
+
+		var send = function(){
+			//Gets color of button
+			var clr = document.getElementById('clrBtn').style.backgroundColor;
+			clr = clr.replace('rgb(','');
+			clr = clr.replace(')','');
+			clr = clr.replace(/,/gi,'');
+			console.log(clr);
+			//Send color through socket
+			this.sock.emit('ledCLR',clr)
+		}
+
+		setInterval(send,100);
+	</script>
+
+
+</body>
+

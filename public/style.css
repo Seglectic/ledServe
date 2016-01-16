@@ -1,0 +1,20 @@
+body{
+	margin: 30px;
+	font-family: courier;
+	color: rgb(255,255,255);
+	background-color: rgb(50,50,100);
+}
+
+
+/* Shows what RGB values are currently on*/
+#colorDisplay{
+	color: black;
+	border-radius: 10px;
+	box-shadow: 3px 3px 10px black;
+	float: left;
+	position: absolute;
+	min-width: 200px;
+	min-height: 50px;
+	margin-left: calc(50% - 115px);
+	background-color: white;
+}
