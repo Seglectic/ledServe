@@ -32,6 +32,22 @@ var io = require('socket.io')(http);
 
 
 /*
+	Set RGB LED Colors with a [r,g,b] array
+*/
+var piblaster = require('pi-blaster.js');
+
+set = function(rgb){ //Set values
+	var r = 1-(r[0]/255);
+	var g = 1-(g[1]/255);
+	var b = 1-(b[2]/255);
+	piblaster.setPwm(17,r);
+	piblaster.setPwm(18,g);
+	piblaster.setPwm(22,b);
+};
+
+set(0,0,0);
+
+/*
 	RGB COMMS
 */
 io.on('connection',function(sock){
@@ -42,7 +58,7 @@ io.on('connection',function(sock){
 	});
 
 	sock.on('ledCLR',function(clr){
-		clr = clr.split(' ');
+		clr = clr.split(' ')
 		console.log(clr)
 	});
 
